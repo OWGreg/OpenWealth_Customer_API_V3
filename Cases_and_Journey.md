@@ -1,7 +1,7 @@
 # CLM API – USER STORIES 
-# Use Case 1 – Client Onboarding (New Client Opening)
+## Use Case 1 – Client Onboarding (New Client Opening)
 
-## Stakeholder: EAM External Asset Manager / FIM Financial Intermediary
+### Stakeholder: EAM External Asset Manager / FIM Financial Intermediary
 
 - As an external asset manager,  
   I want to send a structured client onboarding package  
@@ -19,7 +19,7 @@
   I want to indicate the desired relationship manager, team, or onboarding channel  
   so that the bank can route the request to the appropriate internal desk.
 
-## Stakeholder: PMS System
+### Stakeholder: PMS System
 
 - As a PMS system,  
   I want to transmit the full client identification data set (name, address, date of birth, nationality, etc.)  
@@ -57,7 +57,7 @@
   I want to provide a preferred booking center and domicile of the relationship  
   so that the bank can assign the correct legal entity and jurisdictional rules.
 
-## Stakeholder: Bank
+### Stakeholder: Bank
 
 - As a bank,  
   I want to receive client onboarding data in a structured and validated format  
@@ -95,9 +95,9 @@
   I want to log the source of onboarding data (e.g., PMS system ID, timestamp, submitting advisor)  
   so that I can ensure auditability and accountability of the onboarding process.
 
-  # Use Case 2 – Address Change / Relocation
+## Use Case 2 – Address Change / Relocation
 
-## Stakeholder: External Asset Manager / Financial Intermediary (EAM/FIM)
+### Stakeholder: External Asset Manager / Financial Intermediary (EAM/FIM)
 
 - As an external asset manager,  
   I want to capture my client’s new address details during a regular interaction or client meeting  
@@ -119,7 +119,7 @@
   I want to track the effective date of the address change  
   so that I can synchronize my records and set appropriate reminders for related client follow-ups.
 
-## Stakeholder: PMS System
+### Stakeholder: PMS System
 
 - As a PMS system,  
   I want to support the entry and validation of new address data in structured fields (e.g., street, ZIP, city, country)  
@@ -145,7 +145,7 @@
   I want to flag whether an address change is due to cross-border movement  
   so that the bank can re-evaluate tax status, residency, or regulatory risk if necessary.
 
-## Stakeholder: Bank
+### Stakeholder: Bank
 
 - As a bank,  
   I want to receive structured address change notifications from external PMS systems  
