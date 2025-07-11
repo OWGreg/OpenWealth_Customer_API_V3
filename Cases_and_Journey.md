@@ -1,4 +1,7 @@
 # CLM API – USER STORIES 
+
+---
+
 ## Use Case 1 – Client Onboarding (New Client Opening)
 
 ### Stakeholder: External Asset Manager / Financial Intermediary (EAM/FIM)
