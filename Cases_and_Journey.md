@@ -158,5 +158,65 @@
 - As a bank,  
   I want to check whether the address change impacts risk classification or reporting obligations  
   so that I can trigger internal reassessments where necessary.
+  
+## Use Case 3 – KYC Review / Periodic Update
+
+### Stakeholder: External Asset Manager / Financial Intermediary (EAM/FIM)
+
+- As an external asset manager,  
+  I want to initiate a KYC update for my client after an annual review or client meeting  
+  so that I can ensure compliance with regulatory obligations and internal policies.
+
+- As an external asset manager,  
+  I want to update client-related information such as occupation, source of wealth, and tax status  
+  so that the bank has an up-to-date client risk profile.
+
+- As an external asset manager,  
+  I want to provide updated documentation (e.g., new ID, tax forms, questionnaires)  
+  so that the bank can reassess the client’s status and maintain a compliant file.
+
+- As an external asset manager,  
+  I want to receive confirmation from the bank once the updated KYC information has been accepted  
+  so that I know the file is complete and no open issues remain.
+
+### Stakeholder: PMS System
+
+- As a PMS system,  
+  I want to support structured KYC data input and change tracking (e.g., source of funds, PEP status, client occupation)  
+  so that changes can be transmitted to the bank in a consistent and machine-readable format.
+
+- As a PMS system,  
+  I want to timestamp and log each KYC update submitted to the bank  
+  so that audit trails and compliance reporting can be ensured.
+
+- As a PMS system,  
+  I want to allow secure document uploads (e.g., updated ID, self-declarations) linked to the KYC review  
+  so that the bank can perform validation and storage without manual transfer steps.
+
+- As a PMS system,  
+  I want to notify the EAM if a previously submitted KYC update was rejected or incomplete  
+  so that corrective actions can be taken proactively.
+
+### Stakeholder: Bank
+
+- As a bank,  
+  I want to receive structured KYC update data from the PMS  
+  so that I can automatically refresh the client’s risk profile in the core system.
+
+- As a bank,  
+  I want to receive and archive new supporting documents related to the KYC update  
+  so that I can ensure proper documentation for audits and regulatory inspections.
+
+- As a bank,  
+  I want to log all received KYC updates with a timestamp and source system reference  
+  so that I have a complete and traceable client history.
+
+- As a bank,  
+  I want to notify the PMS system and EAM whether the KYC update was accepted, rejected, or needs further clarification  
+  so that the intermediary can follow up with the client accordingly.
+
+- As a bank,  
+  I want to automatically assess whether a KYC update affects the client’s segmentation or risk scoring  
+  so that changes are reflected immediately in our internal classification systems.
 
 
