@@ -1,14 +1,15 @@
-# CLM API – User Stories: Use Case 1 – Client Onboarding (New Client Opening)
+# CLM API – User Stories: 
+# Use Case 1 – Client Onboarding (New Client Opening)
 
-## Stakeholder: External Asset Manager
+## Stakeholder: EAM External Asset Manager / FIM Financial Intermediary
 
 - As an external asset manager,  
   I want to send a structured client onboarding package  
   so that the bank can automatically initiate the client opening process without manual re-entry.
 
 - As an external asset manager,  
-  I want to specify the account types to be opened (e.g., custody, current, currency-specific accounts)  
-  so that the bank provisions the correct account setup during onboarding.
+  I want to send the necessary client-documentation files through my PMS to the bank  
+  so that the bank has all the required documents.
 
 - As an external asset manager,  
   I want to track the status of the onboarding request (e.g., received, in review, approved, rejected)  
