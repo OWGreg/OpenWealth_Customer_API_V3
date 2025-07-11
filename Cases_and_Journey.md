@@ -100,10 +100,6 @@
 ### Stakeholder: External Asset Manager / Financial Intermediary (EAM/FIM)
 
 - As an external asset manager,  
-  I want to capture my client’s new address details during a regular interaction or client meeting  
-  so that I can ensure the bank is kept informed and client records are always up to date.
-
-- As an external asset manager,  
   I want to initiate an address change request via my PMS system  
   so that the change can be processed digitally without requiring paper forms.
 
@@ -137,14 +133,6 @@
   I want to allow the upload of documents linked to the address change request  
   so that the bank can validate the change in line with internal policies.
 
-- As a PMS system,  
-  I want to handle address updates for both natural persons and legal entities  
-  so that the process supports the full client base.
-
-- As a PMS system,  
-  I want to flag whether an address change is due to cross-border movement  
-  so that the bank can re-evaluate tax status, residency, or regulatory risk if necessary.
-
 ### Stakeholder: Bank
 
 - As a bank,  
@@ -160,10 +148,6 @@
   so that I can update internal systems appropriately and avoid communication issues.
 
 - As a bank,  
-  I want to check whether supporting documentation is required for certain jurisdictions or changes  
-  so that I remain compliant with local regulatory standards.
-
-- As a bank,  
   I want to log the address change event along with user metadata and timestamp  
   so that I maintain a full audit trail of client lifecycle events.
 
@@ -175,7 +159,4 @@
   I want to check whether the address change impacts risk classification or reporting obligations  
   so that I can trigger internal reassessments where necessary.
 
-- As a bank,  
-  I want to prevent changes that conflict with open compliance alerts or flagged accounts  
-  so that updates do not bypass unresolved review processes.
 
