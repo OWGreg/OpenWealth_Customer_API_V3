@@ -307,8 +307,8 @@
 - As a PMS system,  
   I want to support structured capture of tax status fields (e.g., tax residence, TIN, CRS/FATCA status)  
   so that updates can be validated and transmitted reliably.
-  
-  - As a PMS system,  
+
+- As a PMS system,  
   I want to notify the EAM if a previously submitted tax status update was rejected or incomplete  
   so that corrective actions can be taken proactively.
 
