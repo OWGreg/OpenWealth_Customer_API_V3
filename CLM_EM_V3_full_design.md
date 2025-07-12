@@ -203,5 +203,5 @@ erDiagram
     Person ||--o{ FundFlows : hasMultiple
     Person ||--o| TaxStatus : hasOne
     
-    Risk ||--o{ CorporateInsider : hasMultiple
-    Risk ||--o{ MajorShareholder : hasMultiple
+    RiskCompliance ||--o{ CorporateInsider : hasMultiple
+    RiskCompliance ||--o{ MajorShareholder : hasMultiple
