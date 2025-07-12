@@ -245,3 +245,6 @@ erDiagram
     
     RiskCompliance ||--o{ CorporateInsider : hasMultiple
     RiskCompliance ||--o{ MajorShareholder : hasMultiple
+
+    FundFlows  ||--o{ InitialAmount : hasMultiple
+    FundFlows  ||--o{ ExpectedFundFlow : hasMultiple
