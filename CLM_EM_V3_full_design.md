@@ -47,11 +47,16 @@ erDiagram
         boolean soleBeneficialOwner
     }
 
-    PersonPersonRelation {
+    person2personRelation {
         string id
         enum type
         string personId
         string relatedPersonId
+        string relation
+        string relationOverride
+        boolean personAssociation
+        string personAssociationName
+        string personAssociationType
     }
 
     Address {
@@ -156,7 +161,7 @@ erDiagram
         boolean fatcaSubstantialPresenceTest
         boolean fatcaOtherReasons
         object countryOfDomicile
-        object[] taxDomicileList
+        object[] taxDomicileList "taxDomicile"
     }
 
     %% Beziehungen
