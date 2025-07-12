@@ -28,6 +28,13 @@ erDiagram
         string title
         string gender
         array nationalities
+        string civilStatus
+        string dateOfBirth
+        string dateOfDeath
+        string dateOfMarriage
+        string countryOfBirth
+        object tinList "tinNumber, tinCountry"
+        object legalPerson "organisationName, legalForm, lei, domiciliaryCompany" 
     }
 
     CustomerPersonRelation {
