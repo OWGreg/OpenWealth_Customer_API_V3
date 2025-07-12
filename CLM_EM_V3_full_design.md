@@ -3,25 +3,36 @@
 erDiagram
 
     Customer {
-        string id
+        string customerId
+        string externalReference
         string status
         string name
+        string openingDate
         string referenceCurrency
-        string segment
+        string language
+        string customerSegment
         string[] personList
         string purposeOfRelationship
         object externalAssetManager
     }
 
     Person {
-        string id
-        enum type "natural, legal or joint"
+        string personId
         string externalReference
+        enum personType
+        string language
+        string openingDate
+        string givenName
+        string middleName
+        string lastName
+        string title
+        string gender
+        array nationalities
     }
 
     CustomerPersonRelation {
         string id
-        enum type
+        enum relationType
         string cardinality
         string personId
         string relatedCustomerId
