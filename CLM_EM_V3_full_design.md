@@ -68,7 +68,15 @@ erDiagram
         boolean isDomicile
         string language
         boolean isMailingAddress
-        object salutationDetails
+        string receptionRestriciton
+        string salutation
+        string title
+        string salutationOverride
+        string organisationName
+        string givenName
+        string lastName
+        string careOf
+        string toTheAttentionOf
         string department
         string streetName
         string buildingNumber
@@ -82,7 +90,6 @@ erDiagram
         string districtName
         string countrySubDivision
         string country
-        string address 
     }
 
     Contact {
@@ -135,11 +142,9 @@ erDiagram
         object sourceOfWealth_amount
         object[] sourceOfWealth_countriesOfOrigin
         object sourceOfWealth_additionalProperties
-
         object totalWealth_amountTotalNetAssets
         object totalWealth_referenceYear
         object[] totalWealth_assetAllocation
-
         object totalIncome_amountYearlyIncome
         object totalIncome_referenceYear
         object[] totalIncome_sourceOfIncomeList
