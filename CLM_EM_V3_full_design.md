@@ -171,27 +171,18 @@ erDiagram
         string isin
     }
 
-    Risk {
+    RiskCompliance {
         enum politicalStatus
-        boolean fatcaStatus
-        boolean fatcaDomicile
-        boolean fatcaBirthplace
-        boolean fatcaGreenCard
-        boolean fatcaSubstantialPresenceTest
-        boolean fatcaOtherReasons
         object countryOfDomicile
-        object[] taxDomicileList "taxDomicile"
-    }
+            }
 
     TaxStatus {
-        enum politicalStatus
         boolean fatcaStatus
         boolean fatcaDomicile
         boolean fatcaBirthplace
         boolean fatcaGreenCard
         boolean fatcaSubstantialPresenceTest
         boolean fatcaOtherReasons
-        object countryOfDomicile
         object[] taxDomicileList "taxDomicile"
     }
 
