@@ -12,7 +12,6 @@ erDiagram
         string language
         string customerSegment
         string[] personList
-        string purposeOfRelationship
         object externalAssetManager
     }
 
