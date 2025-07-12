@@ -158,7 +158,7 @@ erDiagram
         string currencyPlannedTotalAssets
         integer amountExpectedTurnover
         string currencyExpectedTurnover 
-        object[] recurringCounterpartyList recurringCounterparty
+        object[] recurringCounterpartyList
         object[] initialAmountList
         object[] expectedFundFlowList
         integer numberOfInflows
@@ -213,7 +213,7 @@ erDiagram
         string additionalInformation             
     }
 
-    expectedFundFlow {
+    ExpectedFundFlow {
         enum type
         string counterparty
         string nameOfBank
