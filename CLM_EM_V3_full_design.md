@@ -169,8 +169,8 @@ erDiagram
     Customer ||--|{ CustomerPersonRelation : hasMultiple
     Customer ||--o{ Document : hasMultiple
     CustomerPersonRelation }o--|| Person : hasMultiple
-    PersonPersonRelation }o--|| Person : hasMultiple
-    PersonPersonRelation }o--|| Person : isRelatedPerson
+    person2personRelation }o--|| Person : hasMultiple
+    person2personRelation }o--|| Person : isRelatedPerson
 
     Person ||--o{ Address : hasMultiple
     Person ||--o{ Contact : hasMultiple
