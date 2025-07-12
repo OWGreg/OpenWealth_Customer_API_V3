@@ -130,7 +130,7 @@ erDiagram
         object employmentInformation
     }
 
-    Wealth {
+    WealthProfile {
         string sourceOfWealth_type
         object sourceOfWealth_amount
         object[] sourceOfWealth_countriesOfOrigin
@@ -183,6 +183,18 @@ erDiagram
         object[] taxDomicileList "taxDomicile"
     }
 
+    TaxStatus {
+        enum politicalStatus
+        boolean fatcaStatus
+        boolean fatcaDomicile
+        boolean fatcaBirthplace
+        boolean fatcaGreenCard
+        boolean fatcaSubstantialPresenceTest
+        boolean fatcaOtherReasons
+        object countryOfDomicile
+        object[] taxDomicileList "taxDomicile"
+    }
+
     %% Beziehungen
 
     Customer ||--|{ CustomerPersonRelation : hasMultiple
@@ -195,9 +207,10 @@ erDiagram
     Person ||--o{ Contact : hasMultiple
     Person ||--o| Employment : hasOne
     Person ||--o| Education : hasOne
-    Person ||--o| Wealth : hasOne
-    Person ||--o| Risk : hasOne
+    Person ||--o| WealthProfile : hasOne
+    Person ||--o| RiskCompliance : hasOne
     Person ||--o{ FundFlows : hasMultiple
+    Person ||--o| TaxStatus : hasOne
     
     Risk ||--o{ CorporateInsider : hasMultiple
     Risk ||--o{ MajorShareholder : hasMultiple
