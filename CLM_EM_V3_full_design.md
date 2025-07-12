@@ -63,7 +63,7 @@ erDiagram
         string addressId
         string personId 
         string externalReference "
-        enum type discuss "delete?"
+        enum type discuss "delete"
         string addressName
         boolean isDomicile
         string language
@@ -82,7 +82,7 @@ erDiagram
         string districtName
         string countrySubDivision
         string country
-        string address "delete?"
+        string address "delete"
     }
 
     Contact {
