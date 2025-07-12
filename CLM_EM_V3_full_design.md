@@ -60,10 +60,29 @@ erDiagram
     }
 
     Address {
-        string id
-        enum type
-        string personId
-        string address
+        string addressId
+        string personId 
+        string externalReference "
+        enum type discuss "delete?"
+        string addressName
+        boolean isDomicile
+        string language
+        boolean isMailingAddress
+        object salutationDetails 
+        string department
+        string streetName
+        string buildingNumber
+        string buildingName
+        string floor
+        string postBox
+        string room
+        string postcode
+        string townName
+        string townLocationName
+        string districtName
+        string countrySubDivision
+        string country
+        string address "delete?"
     }
 
     Contact {
