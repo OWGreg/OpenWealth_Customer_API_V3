@@ -61,14 +61,14 @@ erDiagram
 
     Address {
         string addressId
-        string personId 
-        string externalReference 
-        enum type discuss 
+        string personId
+        string externalReference
+        enum type
         string addressName
         boolean isDomicile
         string language
         boolean isMailingAddress
-        object salutationDetails 
+        object salutationDetails
         string department
         string streetName
         string buildingNumber
