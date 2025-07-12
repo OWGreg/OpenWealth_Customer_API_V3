@@ -174,6 +174,8 @@ erDiagram
     RiskCompliance {
         enum politicalStatus
         object countryOfDomicile
+        object[] CorporateInsiderList
+        object[] MajorSharholderList
             }
 
     TaxStatus {
