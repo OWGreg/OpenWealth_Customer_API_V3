@@ -40,9 +40,11 @@ erDiagram
         string id
         enum relationType
         string cardinality
+        boolean soleBeneficialOwner
         string personId
         string relatedCustomerId
         string purposeOfRelationship
+        string additionalInformationPurpose
         boolean soleBeneficialOwner
     }
 
@@ -150,14 +152,17 @@ erDiagram
     }
 
     FundFlows {
-        object amountExpectedInflows
-        object amountPlannedTotalAssets
-        object amountExpectedTurnover
-        integer numberOfInflows
-        integer numberOfOutflows
-        object[] recurringCounterpartyList
+        integer amountExpectedInflows
+        string currencyExpectedInflow
+        integer amountPlannedTotalAssets
+        string currencyPlannedTotalAssets
+        integer amountExpectedTurnover
+        string currencyExpectedTurnover 
+        object[] recurringCounterpartyList recurringCounterparty
         object[] initialAmountList
         object[] expectedFundFlowList
+        integer numberOfInflows
+        integer numberOfOutflows
     }
 
     CorporateInsider {
@@ -190,6 +195,35 @@ erDiagram
         boolean fatcaSubstantialPresenceTest
         boolean fatcaOtherReasons
         object[] taxDomicileList "taxDomicile"
+    }
+
+    InitialAmount {
+        integer amount
+        string currency
+        string originOfAssets
+        string originOfAssetsDetails
+        string nameOfBank
+        string domicileOfBank
+        boolean physicalTransfer
+        boolean electronicTransfer
+        boolean samePerson
+        string thirdPartyName
+        string thirdPartyRelationship
+        string thirdPartyReason
+        string additionalInformation             
+    }
+
+    expectedFundFlow {
+        enum type
+        string counterparty
+        string nameOfBank
+        string domicileOfBank
+        string purpose
+        string frequency
+        integer amount
+        string currency
+        string originOfAssets
+        string additionalInformation             
     }
 
     %% Beziehungen
