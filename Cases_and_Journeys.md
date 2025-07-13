@@ -508,4 +508,7 @@
   I want to record reassignment events for compliance and service quality tracking  
   so that all changes are traceable.
 
+## Use-Case 11: Pre-Check
+
+- TBD!
 
