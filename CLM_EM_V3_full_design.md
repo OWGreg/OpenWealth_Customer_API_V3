@@ -40,7 +40,7 @@ erDiagram
     tinList {
         string tinNumber
         string tinCountry
-}
+    }
 
     CustomerPersonRelation {
         string id
