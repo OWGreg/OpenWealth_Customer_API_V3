@@ -33,7 +33,7 @@ erDiagram
         string dateOfDeath
         string dateOfMarriage
         string countryOfBirth
-        ^object legalPerson
+        **object legalPerson
         *object[] addressList
         *object[] contactList
         object[] tinList
