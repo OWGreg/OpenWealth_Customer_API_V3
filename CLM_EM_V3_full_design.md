@@ -34,6 +34,7 @@ erDiagram
         string dateOfMarriage
         string countryOfBirth
         **object legalPerson
+        *object[] taxDomicileList
         *object[] addressList
         *object[] contactList
         object[] tinList
@@ -42,7 +43,7 @@ erDiagram
         *object WealthProfile
         *object RiskCompliance
         object[] FundFlowsList
-        object TaxStatus
+        object FATCA
     }
 
     legalPerson {
@@ -61,7 +62,10 @@ erDiagram
         string id
         *enum relationType
         string cardinality
-        boolean soleBeneficialOwner
+        *boolean soleBeneficialOwner
+        *boolean isBeneficialOwner
+        string role
+        string signature
         string bankAdvisor
         string bankDeputyAdvisor
         string bankPreviousAdvisor
@@ -69,7 +73,7 @@ erDiagram
         string relatedCustomerId
         string purposeOfRelationship
         string additionalInformationPurpose
-        boolean soleBeneficialOwner
+
     }
 
     person2personRelation {
@@ -209,14 +213,14 @@ erDiagram
         object[] MajorSharholderList
             }
 
-    TaxStatus {
+    FATCA {
         boolean fatcaStatus
         boolean fatcaDomicile
         boolean fatcaBirthplace
         boolean fatcaGreenCard
         boolean fatcaSubstantialPresenceTest
         boolean fatcaOtherReasons
-        object[] taxDomicileList "taxDomicile"
+        
     }
 
     InitialAmount {
@@ -265,7 +269,7 @@ erDiagram
     Person ||--o| WealthProfile : hasOne
     Person ||--o| RiskCompliance : hasOne
     Person ||--o{ FundFlows : hasMultiple
-    Person ||--o| TaxStatus : hasOne
+    Person ||--o| FATCA : hasOne
     
     RiskCompliance ||--o{ CorporateInsider : hasMultiple
     RiskCompliance ||--o{ MajorShareholder : hasMultiple
