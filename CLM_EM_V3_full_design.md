@@ -73,7 +73,6 @@ erDiagram
         string relatedCustomerId
         string purposeOfRelationship
         string additionalInformationPurpose
-
     }
 
     person2personRelation {
@@ -83,7 +82,6 @@ erDiagram
         string relatedPersonId
         *string relation
         string relationOverride
-
     }
 
     Address {
