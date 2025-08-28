@@ -17,10 +17,10 @@ erDiagram
     }
 
     Person {
-        string personId
+        *string personId
         string externalReference
-        enum personType
-        string language
+        *enum personType
+        *string language
         string openingDate
         string givenName
         string middleName
@@ -34,7 +34,14 @@ erDiagram
         string dateOfMarriage
         string countryOfBirth
         object tinList
-        object legalPerson "organisationName, legalForm, lei, domiciliaryCompany" 
+        object legalPerson
+    }
+
+    legalPerson {
+        *string organisationName
+        *string legalForm
+        *strin lei
+        * boolean domiciliaryCompany
     }
 
     tin {
@@ -246,6 +253,7 @@ erDiagram
     Person ||--o{ Address : hasMultiple
     Person ||--o{ Contact : hasMultiple
     Person ||--o{ tin : hasMultiple
+    Person ||--o| legalPerson : hasOne
     Person ||--o| Employment : hasOne
     Person ||--o| Education : hasOne
     Person ||--o| WealthProfile : hasOne
