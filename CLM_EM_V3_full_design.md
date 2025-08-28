@@ -7,7 +7,7 @@ erDiagram
         string externalReference
         string customerType
         string status
-        * string name
+        *string name
         string openingDate
         string referenceCurrency
         string language
