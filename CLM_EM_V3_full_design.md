@@ -37,7 +37,7 @@ erDiagram
         object legalPerson "organisationName, legalForm, lei, domiciliaryCompany" 
     }
 
-    tinList {
+    tin {
         string tinNumber
         string tinCountry
     }
@@ -245,7 +245,7 @@ erDiagram
 
     Person ||--o{ Address : hasMultiple
     Person ||--o{ Contact : hasMultiple
-    Person ||--o{ tinList : hasMultiple
+    Person ||--o{ tin : hasMultiple
     Person ||--o| Employment : hasOne
     Person ||--o| Education : hasOne
     Person ||--o| WealthProfile : hasOne
