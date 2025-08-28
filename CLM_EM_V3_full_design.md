@@ -41,7 +41,7 @@ erDiagram
         *string organisationName
         *string legalForm
         *strin lei
-        * boolean domiciliaryCompany
+        *boolean domiciliaryCompany
     }
 
     tin {
