@@ -5,7 +5,7 @@ erDiagram
     Customer {
         *string customerId
         string externalReference
-        string customerType
+        *string customerType
         string status
         *string name
         string openingDate
@@ -22,19 +22,27 @@ erDiagram
         *enum personType
         *string language
         string openingDate
-        string givenName
+        *string givenName
         string middleName
-        string lastName
+        *string lastName
         string title
         string gender
-        array nationalities
+        *array nationalities
         string civilStatus
-        string dateOfBirth
+        *string dateOfBirth
         string dateOfDeath
         string dateOfMarriage
         string countryOfBirth
-        object tinList
-        object legalPerson
+        ^object legalPerson
+        *object[] addressList
+        *object[] contactList
+        object[] tinList
+        object employement
+        object education
+        *object WealthProfile
+        *object RiskCompliance
+        object[] FundFlowsList
+        object TaxStatus
     }
 
     legalPerson {
@@ -69,11 +77,9 @@ erDiagram
         enum type
         string personId
         string relatedPersonId
-        string relation
+        *string relation
         string relationOverride
-        boolean personAssociation
-        string personAssociationName
-        string personAssociationType
+
     }
 
     Address {
