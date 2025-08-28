@@ -3,15 +3,16 @@
 erDiagram
 
     Customer {
-        string customerId
+        *string customerId
         string externalReference
+        string customerType
         string status
-        string name
+        * string name
         string openingDate
         string referenceCurrency
         string language
         string customerSegment
-        string[] personList
+        *string[] personList
         object externalAssetManager
     }
 
@@ -32,15 +33,23 @@ erDiagram
         string dateOfDeath
         string dateOfMarriage
         string countryOfBirth
-        object tinList "tinNumber, tinCountry"
+        object tinList
         object legalPerson "organisationName, legalForm, lei, domiciliaryCompany" 
     }
 
+    tinList {
+        string tinNumber
+        string tinCountry
+}
+
     CustomerPersonRelation {
         string id
-        enum relationType
+        *enum relationType
         string cardinality
         boolean soleBeneficialOwner
+        string bankAdvisor
+        string bankDeputyAdvisor
+        string bankPreviousAdvisor
         string personId
         string relatedCustomerId
         string purposeOfRelationship
@@ -236,6 +245,7 @@ erDiagram
 
     Person ||--o{ Address : hasMultiple
     Person ||--o{ Contact : hasMultiple
+    Person ||--o{ tinList : hasMultiple
     Person ||--o| Employment : hasOne
     Person ||--o| Education : hasOne
     Person ||--o| WealthProfile : hasOne
