@@ -12,6 +12,8 @@ erDiagram
         string referenceCurrency
         string language
         string customerSegment
+        *array purposeOfRelationship
+        string additionalInformationPurpose
         *string[] personList
         object externalAssetManager
     }
@@ -85,14 +87,12 @@ erDiagram
     }
 
     Address {
-        string addressId
-        string personId
-        string externalReference
+        *string addressId
         enum type
         string addressName
-        boolean isDomicile
-        string language
-        boolean isMailingAddress
+        *boolean isDomicile
+        *string language
+        *boolean isMailingAddress
         string receptionRestriciton
         string salutation
         string title
@@ -103,18 +103,18 @@ erDiagram
         string careOf
         string toTheAttentionOf
         string department
-        string streetName
+        *string streetName
         string buildingNumber
         string buildingName
         string floor
         string postBox
         string room
-        string postcode
-        string townName
+        *string postcode
+        *string townName
         string townLocationName
         string districtName
         string countrySubDivision
-        string country
+        *string country
     }
 
     Contact {
@@ -207,6 +207,13 @@ erDiagram
     RiskCompliance {
         enum politicalStatus
         object countryOfDomicile
+        boolean pepStatus
+        string pepFunction
+        boolean pepAssociations
+        string pepRelation
+        string pepRelationsFunction
+        string additionalInformation
+        string sanctions
         object[] CorporateInsiderList
         object[] MajorSharholderList
             }
