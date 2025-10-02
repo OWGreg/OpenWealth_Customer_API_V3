@@ -6,242 +6,57 @@ erDiagram
     }
 
     Person {
-        *string personId
-        string externalReference
-        *enum personType
-        *string language
-        string openingDate
-        *string givenName
-        string middleName
-        *string lastName
-        string title
-        string gender
-        *array nationalities
-        string civilStatus
-        *string dateOfBirth
-        string dateOfDeath
-        string dateOfMarriage
-        string countryOfBirth
-        **object legalPerson
-        *object[] taxDomicileList
-        *object[] addressList
-        *object[] contactList
-        object[] tinList
-        object employement
-        object education
-        *object WealthProfile
-        *object RiskCompliance
-        object[] FundFlowsList
-        object FATCA
     }
 
     legalPerson {
-        *string organisationName
-        *string legalForm
-        *strin lei
-        *boolean domiciliaryCompany
     }
 
     tin {
-        string tinNumber
-        string tinCountry
     }
 
     CustomerPersonRelation {
-        string id
-        *enum relationType
-        string cardinality
-        *boolean soleBeneficialOwner
-        *boolean isBeneficialOwner
-        string role
-        string signature
-        string bankAdvisor
-        string bankDeputyAdvisor
-        string bankPreviousAdvisor
-        string personId
-        string relatedCustomerId
-        string purposeOfRelationship
-        string additionalInformationPurpose
     }
 
     person2personRelation {
-        string id
-        enum type
-        string personId
-        string relatedPersonId
-        *string relation
-        string relationOverride
     }
 
     Address {
-        *string addressId
-        enum type
-        string addressName
-        *boolean isDomicile
-        *string language
-        *boolean isMailingAddress
-        string receptionRestriciton
-        string salutation
-        string title
-        string salutationOverride
-        string organisationName
-        string givenName
-        string lastName
-        string careOf
-        string toTheAttentionOf
-        string department
-        *string streetName
-        string buildingNumber
-        string buildingName
-        string floor
-        string postBox
-        string room
-        *string postcode
-        *string townName
-        string townLocationName
-        string districtName
-        string countrySubDivision
-        *string country
     }
 
     Contact {
-        string id
-        enum medium
-        enum prio
-        string content
     }
 
     Document {
-        string id
-        string customerId
-        enum group
-        enum type
-        enum status
-        date issueDate
-        string content
     }
 
     Education {
-        string highestDiploma
-        integer graduationYear
-        string institute
-        string studyProgramme
-        object educationInformation
     }
 
     Employment {
-        string companyName
-        object companyDomicile
-        object[] companyCountriesOfBusinessList
-        string companyDetail
-        integer companyNumberOfEmployees
-        number companyAnnualTurnover
-        string industry
-        object roleOrPosition
-        profession profession
-        string domicile
-        number shareholdingInPercent
-        object period
-        integer yearOfRetirement
-        integer sharedholderSinceYear
-        string mandate
-        string additionalInformation
-        object employmentInformation
     }
 
     WealthProfile {
-        string sourceOfWealth_type
-        object sourceOfWealth_amount
-        object[] sourceOfWealth_countriesOfOrigin
-        object sourceOfWealth_additionalProperties
-        object totalWealth_amountTotalNetAssets
-        object totalWealth_referenceYear
-        object[] totalWealth_assetAllocation
-        object totalIncome_amountYearlyIncome
-        object totalIncome_referenceYear
-        object[] totalIncome_sourceOfIncomeList
     }
 
     FundFlows {
-        integer amountExpectedInflows
-        string currencyExpectedInflow
-        integer amountPlannedTotalAssets
-        string currencyPlannedTotalAssets
-        integer amountExpectedTurnover
-        string currencyExpectedTurnover 
-        object[] recurringCounterpartyList
-        object[] initialAmountList
-        object[] expectedFundFlowList
-        integer numberOfInflows
-        integer numberOfOutflows
     }
 
     CorporateInsider {
-        string corporateInsiderAssociation
-        string relation
-        object position
-        string companyName
-        string isin
     }
 
     MajorShareholder {
-        string majorShareholderAssociation
-        string relation
-        string companyName
-        string isin
     }
 
     RiskCompliance {
-        enum politicalStatus
-        object countryOfDomicile
-        boolean pepStatus
-        string pepFunction
-        boolean pepAssociations
-        string pepRelation
-        string pepRelationsFunction
-        string additionalInformation
-        string sanctions
-        object[] CorporateInsiderList
-        object[] MajorSharholderList
-            }
+    }
 
     FATCA {
-        boolean fatcaStatus
-        boolean fatcaDomicile
-        boolean fatcaBirthplace
-        boolean fatcaGreenCard
-        boolean fatcaSubstantialPresenceTest
-        boolean fatcaOtherReasons
-        
     }
 
-    InitialAmount {
-        integer amount
-        string currency
-        string originOfAssets
-        string originOfAssetsDetails
-        string nameOfBank
-        string domicileOfBank
-        boolean physicalTransfer
-        boolean electronicTransfer
-        boolean samePerson
-        string thirdPartyName
-        string thirdPartyRelationship
-        string thirdPartyReason
-        string additionalInformation             
+    InitialAmount {          
     }
 
-    ExpectedFundFlow {
-        enum type
-        string counterparty
-        string nameOfBank
-        string domicileOfBank
-        string purpose
-        string frequency
-        integer amount
-        string currency
-        string originOfAssets
-        string additionalInformation             
+    ExpectedFundFlow {          
     }
 
     %% Beziehungen
