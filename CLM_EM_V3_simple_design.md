@@ -1,45 +1,107 @@
+
 ```mermaid
 erDiagram
 
     Customer {
-        string id
-        string status
-        string name
-        string referenceCurrency
-        string segment
-        string[] personList
-        string purposeOfRelationship
-        object externalAssetManager
     }
 
     Person {
-        string id
-        enum type "natural, legal or joint"
+        *string personId
         string externalReference
+        *enum personType
+        *string language
+        string openingDate
+        *string givenName
+        string middleName
+        *string lastName
+        string title
+        string gender
+        *array nationalities
+        string civilStatus
+        *string dateOfBirth
+        string dateOfDeath
+        string dateOfMarriage
+        string countryOfBirth
+        **object legalPerson
+        *object[] taxDomicileList
+        *object[] addressList
+        *object[] contactList
+        object[] tinList
+        object employement
+        object education
+        *object WealthProfile
+        *object RiskCompliance
+        object[] FundFlowsList
+        object FATCA
+    }
+
+    legalPerson {
+        *string organisationName
+        *string legalForm
+        *strin lei
+        *boolean domiciliaryCompany
+    }
+
+    tin {
+        string tinNumber
+        string tinCountry
     }
 
     CustomerPersonRelation {
         string id
-        enum type
+        *enum relationType
         string cardinality
+        *boolean soleBeneficialOwner
+        *boolean isBeneficialOwner
+        string role
+        string signature
+        string bankAdvisor
+        string bankDeputyAdvisor
+        string bankPreviousAdvisor
         string personId
         string relatedCustomerId
         string purposeOfRelationship
-        boolean soleBeneficialOwner
+        string additionalInformationPurpose
     }
 
-    PersonPersonRelation {
+    person2personRelation {
         string id
         enum type
         string personId
         string relatedPersonId
+        *string relation
+        string relationOverride
     }
 
     Address {
-        string id
+        *string addressId
         enum type
-        string personId
-        string address
+        string addressName
+        *boolean isDomicile
+        *string language
+        *boolean isMailingAddress
+        string receptionRestriciton
+        string salutation
+        string title
+        string salutationOverride
+        string organisationName
+        string givenName
+        string lastName
+        string careOf
+        string toTheAttentionOf
+        string department
+        *string streetName
+        string buildingNumber
+        string buildingName
+        string floor
+        string postBox
+        string room
+        *string postcode
+        *string townName
+        string townLocationName
+        string districtName
+        string countrySubDivision
+        *string country
     }
 
     Contact {
@@ -87,30 +149,31 @@ erDiagram
         object employmentInformation
     }
 
-    Wealth {
+    WealthProfile {
         string sourceOfWealth_type
         object sourceOfWealth_amount
         object[] sourceOfWealth_countriesOfOrigin
         object sourceOfWealth_additionalProperties
-
         object totalWealth_amountTotalNetAssets
         object totalWealth_referenceYear
         object[] totalWealth_assetAllocation
-
         object totalIncome_amountYearlyIncome
         object totalIncome_referenceYear
         object[] totalIncome_sourceOfIncomeList
     }
 
     FundFlows {
-        object amountExpectedInflows
-        object amountPlannedTotalAssets
-        object amountExpectedTurnover
-        integer numberOfInflows
-        integer numberOfOutflows
+        integer amountExpectedInflows
+        string currencyExpectedInflow
+        integer amountPlannedTotalAssets
+        string currencyPlannedTotalAssets
+        integer amountExpectedTurnover
+        string currencyExpectedTurnover 
         object[] recurringCounterpartyList
         object[] initialAmountList
         object[] expectedFundFlowList
+        integer numberOfInflows
+        integer numberOfOutflows
     }
 
     CorporateInsider {
@@ -128,16 +191,57 @@ erDiagram
         string isin
     }
 
-    Risk {
+    RiskCompliance {
         enum politicalStatus
+        object countryOfDomicile
+        boolean pepStatus
+        string pepFunction
+        boolean pepAssociations
+        string pepRelation
+        string pepRelationsFunction
+        string additionalInformation
+        string sanctions
+        object[] CorporateInsiderList
+        object[] MajorSharholderList
+            }
+
+    FATCA {
         boolean fatcaStatus
         boolean fatcaDomicile
         boolean fatcaBirthplace
         boolean fatcaGreenCard
         boolean fatcaSubstantialPresenceTest
         boolean fatcaOtherReasons
-        object countryOfDomicile
-        object[] taxDomicileList
+        
+    }
+
+    InitialAmount {
+        integer amount
+        string currency
+        string originOfAssets
+        string originOfAssetsDetails
+        string nameOfBank
+        string domicileOfBank
+        boolean physicalTransfer
+        boolean electronicTransfer
+        boolean samePerson
+        string thirdPartyName
+        string thirdPartyRelationship
+        string thirdPartyReason
+        string additionalInformation             
+    }
+
+    ExpectedFundFlow {
+        enum type
+        string counterparty
+        string nameOfBank
+        string domicileOfBank
+        string purpose
+        string frequency
+        integer amount
+        string currency
+        string originOfAssets
+        string additionalInformation             
     }
 
     %% Beziehungen
@@ -145,16 +249,22 @@ erDiagram
     Customer ||--|{ CustomerPersonRelation : hasMultiple
     Customer ||--o{ Document : hasMultiple
     CustomerPersonRelation }o--|| Person : hasMultiple
-    PersonPersonRelation }o--|| Person : hasMultiple
-    PersonPersonRelation }o--|| Person : isRelatedPerson
+    person2personRelation }o--|| Person : hasMultiple
+    person2personRelation }o--|| Person : isRelatedPerson
 
     Person ||--o{ Address : hasMultiple
     Person ||--o{ Contact : hasMultiple
+    Person ||--o{ tin : hasMultiple
+    Person ||--o| legalPerson : hasOne
     Person ||--o| Employment : hasOne
     Person ||--o| Education : hasOne
-    Person ||--o| Wealth : hasOne
-    Person ||--o| Risk : hasOne
+    Person ||--o| WealthProfile : hasOne
+    Person ||--o| RiskCompliance : hasOne
     Person ||--o{ FundFlows : hasMultiple
+    Person ||--o| FATCA : hasOne
     
-    Risk ||--o{ CorporateInsider : hasMultiple
-    Risk ||--o{ MajorShareholder : hasMultiple
+    RiskCompliance ||--o{ CorporateInsider : hasMultiple
+    RiskCompliance ||--o{ MajorShareholder : hasMultiple
+
+    FundFlows  ||--o{ InitialAmount : hasMultiple
+    FundFlows  ||--o{ ExpectedFundFlow : hasMultiple
