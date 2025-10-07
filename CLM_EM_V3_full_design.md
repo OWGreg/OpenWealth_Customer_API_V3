@@ -329,5 +329,5 @@ erDiagram
 
 %% Colors
 
-    style legalPerson, otherPerson, Person fill:#e0f0ff,stroke:#3366cc,stroke-width:1px
-    style customer2personRelation, mandate2personRelation, person2personRelation,  fill:#e0ffe0,stroke:#2a7a2a,stroke-width:1px
+    style Customer, Mandate, Person, Document, Correspondence fill:#e0f0ff,stroke:#3366cc,stroke-width:1px
+    style customer2personRelation, mandate2personRelation, person2personRelation fill:#ffe0e0,stroke:#cc0000,stroke-width:1px
