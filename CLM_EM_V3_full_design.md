@@ -2,6 +2,8 @@
 ```mermaid
 erDiagram
 
+%% Main Business Objects -------------------------------
+
     Customer {
         *string customerId
         string externalReference
@@ -16,6 +18,13 @@ erDiagram
         string additionalInformationPurpose
         *string[] personList
         object externalAssetManager
+    }
+
+    Mandate {
+        string mandateId
+        string mandateType
+        string mandateOpeningDate
+        string mandateReferenceCurrency
     }
 
     Person {
@@ -51,52 +60,49 @@ erDiagram
     legalPerson {
         *string organisationName
         *string legalForm
-        *strin lei
+        *string lei
         *boolean domiciliaryCompany
     }
 
-    tin {
-        string tinNumber
-        string tinCountry
+    otherPerson {
+        *string organisationName
+        *string legalForm
     }
 
-    CustomerPersonRelation {
-        string id
-        *enum relationType
-        string cardinality
-        *boolean soleBeneficialOwner
-        *boolean isBeneficialOwner
-        string role
-        string signature
-        string bankAdvisor
-        string bankDeputyAdvisor
-        string bankPreviousAdvisor
-        string personId
-        string relatedCustomerId
-        string purposeOfRelationship
-        string additionalInformationPurpose
+    Product {
+        string productId
+        string productType
+        string productCurrency
     }
 
-    person2personRelation {
-        string id
+    Correspondence {
+        string correpondenceId
+        string correspondenceType
+        string correspondenceLanguage
+        string receptionRestriciton
+        string salutation
+        string salutationOverride
+        string title
+    }
+
+    Document {
+        string documentId
+        string customerId
+        enum group
         enum type
-        string personId
-        string relatedPersonId
-        *string relation
-        string relationOverride
+        enum status
+        date issueDate
+        string content
     }
+
+%% Slave Business Objects -------------------------------
 
     Address {
         *string addressId
         enum type
         string addressName
         *boolean isDomicile
-        *string language
         *boolean isMailingAddress
-        string receptionRestriciton
-        string salutation
-        string title
-        string salutationOverride
         string organisationName
         string givenName
         string lastName
@@ -121,16 +127,6 @@ erDiagram
         string id
         enum medium
         enum prio
-        string content
-    }
-
-    Document {
-        string id
-        string customerId
-        enum group
-        enum type
-        enum status
-        date issueDate
         string content
     }
 
@@ -216,7 +212,7 @@ erDiagram
         string sanctions
         object[] CorporateInsiderList
         object[] MajorSharholderList
-            }
+    }
 
     FATCA {
         boolean fatcaStatus
@@ -225,7 +221,11 @@ erDiagram
         boolean fatcaGreenCard
         boolean fatcaSubstantialPresenceTest
         boolean fatcaOtherReasons
-        
+    }
+
+    tin {
+        string tinNumber
+        string tinCountry
     }
 
     InitialAmount {
@@ -257,32 +257,91 @@ erDiagram
         string additionalInformation             
     }
 
-    %% Beziehungen
+%% Relation-Definition-Objects -------------------------------
 
-    Customer ||--|{ CustomerPersonRelation : hasMultiple
+    customer2personRelation {
+        string customerId
+        *enum relationType
+        string cardinality
+        *boolean soleBeneficialOwner
+        *boolean isBeneficialOwner
+        string role
+        string signature
+        string bankAdvisor
+        string bankDeputyAdvisor
+        string bankPreviousAdvisor
+        string personId
+        string relatedCustomerId
+        string purposeOfRelationship
+        string additionalInformationPurpose
+    }
+
+    person2personRelation {
+        string person2personId
+        enum type
+        string personId
+        string relatedPersonId
+        *string relation
+        string relationOverride
+    }
+
+    mandate2personRelation {
+        string mandate2personId
+        *enum relationType
+        string cardinality
+        *boolean soleBeneficialOwner
+        *boolean isBeneficialOwner
+        string role
+        string signature
+        string bankAdvisor
+        string bankDeputyAdvisor
+        string bankPreviousAdvisor
+        string personId
+        string relatedCustomerId
+        string purposeOfRelationship
+        string additionalInformationPurpose
+    }
+
+%% Beziehungen
+
+    Customer ||--|{ customer2personRelation : hasMultiple
     Customer ||--o{ Document : hasMultiple
-    CustomerPersonRelation }o--|| Person : hasMultiple
-    person2personRelation }o--|| Person : hasMultiple
-    person2personRelation }o--|| Person : isRelatedPerson
+    Customer ||--o{ Mandate : hasMultiple
+    Customer ||--o{ Correspondence : hasMultiple
+
+    Mandate ||--o{ mandate2personRelation : hasMultiple
+    Mandate ||--o{ Product : hasMultiple
+    Mandate ||--o{ Document : hasMultiple  
+    Mandate ||--o{ Correspondence : hasMultiple  
 
     Person ||--o{ Address : hasMultiple
     Person ||--o{ Contact : hasMultiple
     Person ||--o{ tin : hasMultiple
-    Person ||--o| legalPerson : hasOne
     Person ||--o| Employment : hasOne
     Person ||--o| Education : hasOne
     Person ||--o| WealthProfile : hasOne
     Person ||--o| RiskCompliance : hasOne
     Person ||--o{ FundFlows : hasMultiple
     Person ||--o| FATCA : hasOne
-    
+    Person ||--o{ Document : hasMultiple
+  
     RiskCompliance ||--o{ CorporateInsider : hasMultiple
     RiskCompliance ||--o{ MajorShareholder : hasMultiple
 
     FundFlows  ||--o{ InitialAmount : hasMultiple
     FundFlows  ||--o{ ExpectedFundFlow : hasMultiple
 
-    %% Farben
+    Correspondence ||--o| Address : hasOne
+    Correspondence ||--o| Contact : hasOne
+    
+    customer2personRelation }o--|| Person : hasMultiple
+    customer2personRelation }o--|| legalPerson : polymorphic
+    customer2personRelation }o--|| otherPerson : polymorphic
+    mandate2personRelation ||--o{ Person : hasMultiple 
+    person2personRelation }o--|| Person : hasMultiple
+    person2personRelation ||--|| Person : isRelatedPerson
 
-    style Customer fill:#e0f0ff,stroke:#3366cc,stroke-width:1px
+%% Colors
 
+    style legalPerson, otherPerson, Person fill:#e0f0ff,stroke:#3366cc,stroke-width:1px
+    style customer2personRelation, mandate2personRelation, person2personRelation,  fill:#e0ffe0,stroke:#2a7a2a,stroke-width:1px
