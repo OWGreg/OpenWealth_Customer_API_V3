@@ -57,18 +57,6 @@ erDiagram
         object FATCA
     }
 
-    legalPerson {
-        *string organisationName
-        *string legalForm
-        *string lei
-        *boolean domiciliaryCompany
-    }
-
-    otherPerson {
-        *string organisationName
-        *string legalForm
-    }
-
     Product {
         string productId
         string productType
@@ -335,8 +323,6 @@ erDiagram
     Correspondence ||--o| Contact : hasOne
     
     customer2personRelation }o--|| Person : hasMultiple
-    customer2personRelation }o--|| legalPerson : polymorphic
-    customer2personRelation }o--|| otherPerson : polymorphic
     mandate2personRelation ||--o{ Person : hasMultiple 
     person2personRelation }o--|| Person : hasMultiple
     person2personRelation ||--|| Person : isRelatedPerson
