@@ -281,3 +281,8 @@ erDiagram
 
     FundFlows  ||--o{ InitialAmount : hasMultiple
     FundFlows  ||--o{ ExpectedFundFlow : hasMultiple
+
+    %% Farben
+
+    style Customer fill:#e0f0ff,stroke:#3366cc,stroke-width:1px
+
