@@ -79,7 +79,6 @@ erDiagram
     Customer ||--|{ customer2personRelation : hasMultiple
     Customer ||--o{ Document : hasMultiple
     Customer ||--o{ Mandate : hasMultiple
-    Customer ||--o{ Correspondence : hasMultiple
 
     Mandate ||--o{ mandate2personRelation : hasMultiple
     Mandate ||--o{ Account : hasMultiple
