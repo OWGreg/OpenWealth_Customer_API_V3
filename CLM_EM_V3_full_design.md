@@ -2,7 +2,7 @@
 ```mermaid
 erDiagram
 
-%% Parent Business Objects -------------------------------
+%% Parent Business Objects --------------------------------
 
     Customer {
         *string customerId
