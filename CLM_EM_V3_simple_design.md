@@ -89,8 +89,8 @@ erDiagram
     Person ||--o{ Address : hasMultiple
     Person ||--o{ Contact : hasMultiple
     Person ||--o{ tin : hasMultiple
-    Person ||--o| Employment : hasOne
-    Person ||--o| Education : hasOne
+    Person ||--o{ Employment : hasOne
+    Person ||--o{ Education : hasOne
     Person ||--o| WealthProfile : hasOne
     Person ||--o| RiskCompliance : hasOne
     Person ||--o{ FundFlows : hasMultiple
