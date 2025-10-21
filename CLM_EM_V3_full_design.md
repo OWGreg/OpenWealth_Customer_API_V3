@@ -2,7 +2,7 @@
 ```mermaid
 erDiagram
 
-%% Main Business Objects -------------------------------
+%% Parent Business Objects -------------------------------
 
     Customer {
         *string customerId
@@ -84,7 +84,7 @@ erDiagram
         string content
     }
 
-%% Slave Business Objects -------------------------------
+%% Child Business Objects -------------------------------
 
     Address {
         *string addressId
@@ -306,9 +306,9 @@ erDiagram
     Person ||--o{ Address : hasMultiple
     Person ||--o{ Contact : hasMultiple
     Person ||--o{ tin : hasMultiple
-    Person ||--o{ Employment : hasOne
-    Person ||--o{ Education : hasOne
-    Person ||--o| WealthProfile : hasOne
+    Person ||--o{ Employment : hasMultiple
+    Person ||--o{ Education : hasMultiple
+    Person ||--o{ WealthProfile : hasMultiple
     Person ||--o| RiskCompliance : hasOne
     Person ||--o{ FundFlows : hasMultiple
     Person ||--o| FATCA : hasOne
