@@ -61,7 +61,7 @@ erDiagram
         string productId
         string productType
         string productName
-        string productCurrency
+        string currency
     }
 
     Correspondence {
