@@ -13,7 +13,7 @@ erDiagram
     Person {
     }
 
-    Product {
+    Account {
     }
 
     Correspondence {
@@ -82,7 +82,7 @@ erDiagram
     Customer ||--o{ Correspondence : hasMultiple
 
     Mandate ||--o{ mandate2personRelation : hasMultiple
-    Mandate ||--o{ Product : hasMultiple
+    Mandate ||--o{ Account : hasMultiple
     Mandate ||--o{ Document : hasMultiple  
     Mandate ||--o{ Correspondence : hasMultiple  
 
