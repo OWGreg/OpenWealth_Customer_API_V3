@@ -67,6 +67,7 @@ erDiagram
     Correspondence {
         string correpondenceId
         string correspondenceType
+        string description
         string correspondenceLanguage
         string salutation
         string salutationOverride
