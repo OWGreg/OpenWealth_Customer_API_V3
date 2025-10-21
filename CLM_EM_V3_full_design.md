@@ -68,7 +68,6 @@ erDiagram
         string correpondenceId
         string correspondenceType
         string correspondenceLanguage
-        string receptionRestriciton
         string salutation
         string salutationOverride
         string title
