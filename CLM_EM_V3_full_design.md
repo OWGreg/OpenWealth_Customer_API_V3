@@ -57,9 +57,10 @@ erDiagram
         object FATCA
     }
 
-    Product {
+    Account {
         string productId
         string productType
+        string productName
         string productCurrency
     }
 
@@ -298,7 +299,7 @@ erDiagram
     Customer ||--o{ Correspondence : hasMultiple
 
     Mandate ||--o{ mandate2personRelation : hasMultiple
-    Mandate ||--o{ Product : hasMultiple
+    Mandate ||--o{ Account : hasMultiple
     Mandate ||--o{ Document : hasMultiple  
     Mandate ||--o{ Correspondence : hasMultiple  
 
