@@ -147,7 +147,7 @@ erDiagram
         object employmentInformation
     }
 
-    WealthProfile {
+    WealthIncome {
         string sourceOfWealth_type
         object sourceOfWealth_amount
         object[] sourceOfWealth_countriesOfOrigin
@@ -309,7 +309,7 @@ erDiagram
     Person ||--o{ tin : hasMultiple
     Person ||--o{ Employment : hasMultiple
     Person ||--o{ Education : hasMultiple
-    Person ||--o{ WealthProfile : hasMultiple
+    Person ||--o{ WealthIncome : hasMultiple
     Person ||--o| RiskCompliance : hasOne
     Person ||--o{ expectedFundFlows : hasMultiple
     Person ||--o| FATCA : hasOne
