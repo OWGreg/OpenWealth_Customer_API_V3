@@ -160,7 +160,7 @@ erDiagram
         object[] totalIncome_sourceOfIncomeList
     }
 
-    expectedFundFlows {
+    FundFlows {
         enum status
         integer amountExpectedInflows
         string currencyExpectedInflow
@@ -311,7 +311,7 @@ erDiagram
     Person ||--o{ Education : hasMultiple
     Person ||--o{ WealthIncome : hasMultiple
     Person ||--o| RiskCompliance : hasOne
-    Person ||--o{ expectedFundFlows : hasMultiple
+    Person ||--o{ FundFlows : hasMultiple
     Person ||--o| FATCA : hasOne
     Person ||--o{ Document : hasMultiple
   
