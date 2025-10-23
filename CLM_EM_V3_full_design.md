@@ -311,7 +311,7 @@ erDiagram
     Person ||--o{ Education : hasMultiple
     Person ||--o{ WealthIncome : hasMultiple
     Person ||--o| RiskCompliance : hasOne
-    Person ||--o{ FundFlows : hasMultiple
+    Person ||--o| FundFlows : hasOne
     Person ||--o| FATCA : hasOne
     Person ||--o{ Document : hasMultiple
   
