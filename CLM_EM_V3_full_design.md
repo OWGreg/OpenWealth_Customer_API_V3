@@ -58,9 +58,9 @@ erDiagram
     }
 
     Account {
-        string productId
-        string productType
-        string productName
+        string Id
+        string Type
+        string Name
         string currency
     }
 
