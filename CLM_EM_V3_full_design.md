@@ -309,7 +309,7 @@ erDiagram
     Person ||--o{ tin : hasMultiple
     Person ||--o{ Employment : hasMultiple
     Person ||--o{ Education : hasMultiple
-    Person ||--o{ WealthIncome : hasMultiple
+    Person ||--o| WealthIncome : hasOne
     Person ||--o| RiskCompliance : hasOne
     Person ||--o| FundFlows : hasOne
     Person ||--o| FATCA : hasOne
