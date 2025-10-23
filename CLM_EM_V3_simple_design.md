@@ -36,7 +36,7 @@ erDiagram
     Employment {
     }
 
-    WealthProfile {
+    WealthIncome {
     }
 
     FundFlows {
@@ -90,7 +90,7 @@ erDiagram
     Person ||--o{ tin : hasMultiple
     Person ||--o{ Employment : hasOne
     Person ||--o{ Education : hasOne
-    Person ||--o| WealthProfile : hasOne
+    Person ||--o| WealthIncome : hasOne
     Person ||--o| RiskCompliance : hasOne
     Person ||--o{ FundFlows : hasMultiple
     Person ||--o| FATCA : hasOne
